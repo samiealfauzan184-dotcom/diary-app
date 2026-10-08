@@ -24,7 +24,6 @@ diary-app/
 ├── assets/
 │   ├── avatar/profile.jpg
 │   └── moods/ (happy, focus, calm, sad, excited .jpg)
-├── docs/screenshots/
 └── src/
     ├── components/ (DiaryCard.js, Header.js)
     ├── constants/moodStyles.js
@@ -48,8 +47,3 @@ diary-app/
    npx expo start -c
 ```
 5. Scan QR code dengan **Expo Go** di HP (satu jaringan Wi-Fi dengan laptop, dan login dengan akun Expo yang sama), atau tekan `a` untuk emulator Android.
-
-## Screenshot
-
-![Daftar Diary](docs/screenshots/01-daftar-diary.png)
-![Daftar Diary (scroll)](docs/screenshots/02-daftar-diary-bawah.png)
