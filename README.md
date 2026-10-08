@@ -1,56 +1,55 @@
-# Welcome to your Expo app 👋
+# Diary App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplikasi buku harian sederhana berbasis React Native + Expo.
 
-## Get started
+## Identitas
 
-1. Install dependencies
+- **Nama:** Samie Al Fauzan
+- **NIM:** 2430511009
+- **Mata Kuliah:** Mobile Programming (React Native + Expo CLI)
 
-   ```bash
-   npm install
-   ```
+## Fitur yang Diselesaikan
 
-2. Start the app
+- Total **5 entri** diary (2 entri baru ditambahkan: id 4 dan 5).
+- Semua gambar mood memakai **gambar lokal** dari `assets/moods`.
+- **Avatar pengguna** pada header menggunakan komponen `Image` (`assets/avatar/profile.jpg`).
+- **Variasi tampilan kartu berdasarkan mood** (warna border, warna latar, ketebalan border, aksen kiri, dan label mood).
+- Struktur folder rapi: data, konstanta, komponen, dan layar dipisah.
 
-   ```bash
-   npx expo start
-   ```
+## Struktur Folder
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+diary-app/
+├── App.js
+├── assets/
+│   ├── avatar/profile.jpg
+│   └── moods/ (happy, focus, calm, sad, excited .jpg)
+├── docs/screenshots/
+└── src/
+    ├── components/ (DiaryCard.js, Header.js)
+    ├── constants/moodStyles.js
+    ├── data/diaryEntries.js
+    └── screens/DiaryListScreen.js
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Cara Menjalankan
 
-### Other setup steps
+1. Pastikan Node.js dan npm sudah terpasang.
+2. Masuk ke folder proyek:
+```
+   cd diary-app
+```
+3. Pasang dependensi:
+```
+   npm install
+```
+4. Jalankan aplikasi:
+```
+   npx expo start -c
+```
+5. Scan QR code dengan **Expo Go** di HP (satu jaringan Wi-Fi dengan laptop, dan login dengan akun Expo yang sama), atau tekan `a` untuk emulator Android.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Screenshot
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![Daftar Diary](docs/screenshots/01-daftar-diary.png)
+![Daftar Diary (scroll)](docs/screenshots/02-daftar-diary-bawah.png)
