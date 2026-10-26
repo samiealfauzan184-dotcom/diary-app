@@ -1,11 +1,26 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { COLORS, RADIUS, SPACE, TYPO } from '../styles/tokens';
 
-export default function Header({ name = 'Samie Al Fauzan' }) {
+const getGreeting = () => {
+  const h = new Date().getHours();
+  if (h < 11) return 'Selamat pagi';
+  if (h < 15) return 'Selamat siang';
+  if (h < 18) return 'Selamat sore';
+  return 'Selamat malam';
+};
+
+export default function Header({ name = 'Samie Al Fauzan', count = 0 }) {
   return (
     <View style={styles.container}>
-      <View>
-        <Text style={styles.greeting}>Hallo, {name} 👋</Text>
-        <Text style={styles.title}>Buku Harian</Text>
+      <View style={styles.textWrap}>
+        <Text style={styles.greeting}>🐱 {getGreeting()},</Text>
+        <Text style={styles.name} numberOfLines={1}>
+          {name} 👋
+        </Text>
+        <Text style={styles.title}>Buku Harian ✨</Text>
+        <View style={styles.pill}>
+          <Text style={styles.pillText}>📚 {count} cerita tersimpan</Text>
+        </View>
       </View>
       <Image
         source={require('../../assets/avatar/profile.jpg')}
@@ -20,22 +35,38 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 16,
-  },
-  greeting: {
-    fontSize: 14,
-    color: '#6b7280',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '700',
-  },
-  avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+    backgroundColor: COLORS.primarySoft,
     borderWidth: 2,
-    borderColor: '#3b82f6',
-    backgroundColor: '#e5e7eb',
+    borderBottomWidth: 5,
+    borderColor: COLORS.primary,
+    borderRadius: 24,
+    padding: SPACE.l,
+    marginBottom: SPACE.m,
+  },
+  textWrap: { flex: 1, paddingRight: SPACE.m },
+  greeting: { fontSize: TYPO.body, color: COLORS.muted },
+  name: { fontSize: TYPO.title, fontWeight: '700', color: COLORS.text },
+  title: {
+    fontSize: 28,
+    fontWeight: '800',
+    color: COLORS.primary,
+    marginTop: SPACE.xs,
+  },
+  pill: {
+    alignSelf: 'flex-start',
+    marginTop: SPACE.s,
+    backgroundColor: COLORS.surface,
+    borderRadius: RADIUS.pill,
+    paddingHorizontal: SPACE.m,
+    paddingVertical: SPACE.xs,
+  },
+  pillText: { fontSize: TYPO.caption, fontWeight: '700', color: COLORS.primary },
+  avatar: {
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    borderWidth: 3,
+    borderColor: COLORS.pink,
+    backgroundColor: COLORS.border,
   },
 });
